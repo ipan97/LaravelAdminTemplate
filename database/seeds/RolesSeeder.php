@@ -13,7 +13,6 @@ class RolesSeeder extends Seeder
     public function run()
     {
         $author = Role::create([
-            'id' => Uuid::generate(),
             'name' => 'Author',
             'slug' => 'author',
             'permissions' => json_encode([
@@ -21,7 +20,6 @@ class RolesSeeder extends Seeder
             ])
         ]);
         $editor = Role::create([
-            'id' => Uuid::generate(),
             'name' => 'Editor',
             'slug' => 'editor',
             'permissions' => json_encode([
