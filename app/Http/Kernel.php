@@ -45,7 +45,7 @@ class Kernel extends HttpKernel
         ],
         'admin' => [
             'auth',
-            'redirect'
+            'auth.admin',
         ],
     ];
 
@@ -61,8 +61,8 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'auth.custom' => \App\Http\Middleware\RedirectIfAuthenticatedCustom::class,
+        //'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'auth.admin' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'api.key' => \App\Http\Middleware\CheckApiKey::class,
     ];

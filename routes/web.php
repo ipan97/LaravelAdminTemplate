@@ -15,7 +15,7 @@ Route::group(['as' => 'frontend', 'namespace' => 'Frontend'], function () {
     Route::get('/', 'HomeController@index');
 });
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth.custom']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'admin'], function () {
     // Dashboard
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
