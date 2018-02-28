@@ -33,7 +33,7 @@
         <form action="{{ route('auth.admin.authenticate') }}" method="POST">
             {{ csrf_field() }}
             <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error':'' }}">
-                <input type="email" class="form-control" placeholder="Email" name="auth[email]">
+                <input type="email" class="form-control" placeholder="Email" name="email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 @if($errors->first('email'))
                     <span class="help-block">
@@ -42,7 +42,7 @@
                 @endif
             </div>
             <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error':'' }}">
-                <input type="password" class="form-control" placeholder="Password" name="auth[password]">
+                <input type="password" class="form-control" placeholder="Password" name="password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 @if($errors->has('password'))
                     <span class="help-block">

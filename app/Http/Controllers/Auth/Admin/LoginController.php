@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
     public function index()
     {
         return view('admin.auth.login');
@@ -16,17 +17,23 @@ class LoginController extends Controller
     public
     function authenticate(Request $request)
     {
-        if (Auth::attempt($request->auth)) {
+        $this->validate($request, [
+            'email' => 'string|required',
+            'password' => 'string|required'
+        ]);
+        if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
+            $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
-        } else {
-            return redirect()->route('auth.admin.login');
         }
+        return redirect()->route('auth.admin.login');
+
+
     }
 
-    public
-    function logout(Request $request)
+    public function logout(Request $request)
     {
         Auth::logout();
+        $request->session()->invalidate();
         return redirect()->route('auth.admin.login');
     }
 }
