@@ -34,6 +34,8 @@ class User extends Authenticatable
 
     /**
      * Checks if User has access to $permissions.
+     * @param array $permissions
+     * @return bool
      */
     public function hasAccess(array $permissions): bool
     {
@@ -48,6 +50,8 @@ class User extends Authenticatable
 
     /**
      * Checks if the user belongs to role.
+     * @param string $roleSlug
+     * @return bool
      */
     public function inRole(string $roleSlug)
     {
