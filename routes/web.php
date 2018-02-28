@@ -15,11 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['prefix' => 'admin', 'as' => 'admin', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['redirect']], function () {
     // Dashboard
     Route::get('/', 'DashboardController@index')->name('dashboard');
+
+
+});
+
+Route::group(['as' => 'auth.', 'namespace' => 'Auth'], function () {
+    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
+        Route::get('login', 'LoginController@index')->name('login');
+        Route::post('authenticate', 'LoginController@authenticate')->name('authenticate');
+        Route::post('logout', 'LoginController@logout')->name('logout');
+    });
+    Route::group(['prefix' => 'frontend', 'as' => 'frontend.', 'namespace' => 'Frontend'], function () {
+
+    });
 });
