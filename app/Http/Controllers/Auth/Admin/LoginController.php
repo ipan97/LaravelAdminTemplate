@@ -20,7 +20,7 @@ class LoginController extends Controller
             'email' => 'string|required',
             'password' => 'string|required'
         ]);
-        if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
+        if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')], $request->filled('remember'))) {
             $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
         }
