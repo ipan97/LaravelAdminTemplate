@@ -27,5 +27,16 @@ class RolesSeeder extends Seeder
                 'publish-post' => true,
             ])
         ]);
+
+        $administrator = Role::create([
+            'name' => 'Administrator',
+            'slug' => 'administrator',
+            'permissions' => json_encode([
+                'create' => true,
+                'update' => true,
+                'delete' => true,
+                'show' => true,
+            ])
+        ]);
     }
 }
