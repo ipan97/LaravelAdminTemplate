@@ -11,11 +11,10 @@ class LoginController extends Controller
 
     public function index()
     {
-        Return view('admin.auth.login');
+        return view('admin.auth.login');
     }
 
-    public
-    function authenticate(Request $request)
+    public function authenticate(Request $request)
     {
         $this->validate($request, [
             'email' => 'string|required',
