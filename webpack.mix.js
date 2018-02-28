@@ -47,7 +47,6 @@ mix.styles([
     'public/css/font-awesome.css',
     'public/css/ionicons.css',
     'public/css/AdminLTE.css',
-    'public/plugins/ICheck/square/blue.css'
 ], 'public/css/login.css');
 
 /*
