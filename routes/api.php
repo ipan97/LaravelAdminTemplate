@@ -13,16 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
 
-Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api', 'middleware' => 'api.key'], function () {
-    Route::get('test', function () {
-        $info = [
-            'name' => 'test',
-            'description' => 'description'
-        ];
-        return $info;
-    })->name('test');
+Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1', 'middleware' => 'api.key'], function () {
+    Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
+        Route::get('profile', 'UserController@profile')->name('profile');
+    });
 });
