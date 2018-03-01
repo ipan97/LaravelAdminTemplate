@@ -12,6 +12,6 @@ class DashboardController extends Controller
     {
         return view('admin.dashboard', [
             'profile' => Auth::user()
-        ]);
+        ])->with('title', 'Dashboard');
     }
 }
