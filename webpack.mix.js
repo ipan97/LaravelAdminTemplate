@@ -30,7 +30,9 @@ mix.copyDirectory('node_modules/admin-lte/dist/css', 'public/css')
 mix.copy('node_modules/font-awesome/css/font-awesome.css', 'public/css/font-awesome.css')
     .copy('node_modules/ionicons/dist/css/ionicons.css', 'public/css/ionicons.css')
     .copy('node_modules/jquery/dist/jquery.js', 'public/js/jquery.js')
-    .copy('node_modules/bootstrap-sass/assets/javascripts/bootstrap.js', 'public/js/bootstrap.js');
+    .copy('node_modules/bootstrap-sass/assets/javascripts/bootstrap.js', 'public/js/bootstrap.js')
+    .copy('node_modules/jquery-slimscroll/jquery.slimscroll.js', 'public/js/jquery.slimscroll.js')
+    .copy('node_modules/fastclick/lib/fastclick.js', 'public/js/fastclick.js');
 /*
  | Stylesheets
  */

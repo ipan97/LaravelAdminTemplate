@@ -14,3 +14,8 @@
         </div>
     </div>
 @endsection()
+
+@section('script')
+    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('js/fastclick.js') }}"></script>
+@endsection()
