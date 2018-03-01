@@ -14,8 +14,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link href="{{ asset('plugins/pace/pace.css') }}" rel="stylesheet">
+@yield('style')
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -56,6 +57,12 @@
 </div>
 <!-- ./wrapper -->
 <script src="{{ asset('js/admin.js') }}"></script>
+<script src="{{ asset('plugins/pace/pace.js') }}"></script>
+<script>
+    $(document).ajaxStart(function () {
+        Pace.restart()
+    });
+</script>
 @yield('script')
 </body>
 </html>

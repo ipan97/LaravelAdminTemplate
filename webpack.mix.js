@@ -40,7 +40,6 @@ mix.styles([
     'public/css/ionicons.css',
     'public/css/AdminLTE.css',
     'public/css/skins/skin-blue.css',
-    'public/css/plugins/pace/pace.css',
 ], 'public/css/all.css');
 
 mix.styles([
@@ -58,8 +57,6 @@ mix.scripts([
     'public/js/jquery.js',
     'public/js/bootstrap.js',
     'public/js/adminlte.js',
-    'public/plugins/plugins/pace/pacejs',
-    'resources/js/admin.js',
 ], 'public/js/admin.js');
 /*
  | Login Admin Scripts
