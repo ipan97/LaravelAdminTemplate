@@ -57,4 +57,14 @@ class User extends Authenticatable
     {
         return $this->roles()->where('slug', $roleSlug)->count() == 1;
     }
+
+    /**
+     * profile by id
+     * @param $id
+     * @return mixed
+     */
+    public static function profile($id)
+    {
+        return User::where('id', $id)->get();
+    }
 }

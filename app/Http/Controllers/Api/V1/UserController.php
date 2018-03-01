@@ -10,10 +10,8 @@ class UserController extends Controller
 {
     public function profile(Request $request)
     {
-        $user = User::all();
-        $result = [
-            'profile' => $user
-        ];
-        return response()->ok($result);
+        return response()->ok([
+            'profile' => User::profile(1)
+        ]);
     }
 }
